@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard</title>
+</head>
+<body>
+	<a href="/">Logout</a>
+	<h1>Hello {{user.first_name}}</h1>
+	<h3>Your Trips</h3>
+	<table>
+
+	{% for item in data %}
+    	<tr>
+        	<td>{{ item.destination }}</td>
+        	<td>{{ item.description }}</td>
+        	<td>{{ item.traveled_to }}</td>
+        	<td>{{ item.traveled_from }}</td>
+        	<td><a href="/destination?id={{ item.id }}">See Details</a></td>
+    	</tr>
+	{% endfor %}
+	</table>
+	<h3>Other Users Plans</h3>
+	<table>
+	{% for item in other_plans %}
+    	<tr>
+        	<td>{{ item.destination }}</td>
+        	<td>{{ item.description }}</td>
+        	<td>{{ item.traveled_to }}</td>
+        	<td>{{ item.traveled_from }}</td>
+        	<td><a href="/destination?id={{ item.id }}">See Details</a></td>
+    	</tr>
+	{% endfor %}
+	<a href="/add_plan">Add Travel Plan</a>
+	</table>
+</body>
+</html>

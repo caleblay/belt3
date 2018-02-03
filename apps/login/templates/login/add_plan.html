@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Plan</title>
+</head>
+<body>
+	<h1>Add A Trip</h1>
+
+	<form action="/add_plan" method="POST">
+		{% csrf_token %}
+		Destination:<input type="text" name="destination">
+		Description:<input type="text" name="description">
+		Traveled To:<input type="text" name="traveled_to">
+		Traveled From:<input type="text" name="traveled_from">
+		<input type="submit" value="Submit">
+	</form>
+	<a href="/dashboard">Home</a>
+</body>
+</html>
